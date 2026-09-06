@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <script
+  type="module"
+  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
   <header class="page-header">
     <h1>Trajectory Flow: Geometry-Constrained Surface Reconstruction via Unsigned Distance Fields</h1>
     <p class="venue">IEEE Transactions on Visualization and Computer Graphics, 2026</p>
@@ -70,6 +74,7 @@
 
     <section>
       <h2>Results</h2>
+      <h3>Qualitative Comparison</h3>
       <figure>
         <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
           <img class="content-image" src="img/result.png" alt="Qualitative reconstruction comparison on the Shapenet Cars dataset.">
@@ -78,8 +83,53 @@
           Qualitative comparison on the Shapenet Cars dataset. our method reconstructs nested multi-layer surfaces more faithfully, preserves distinct internal structures, and avoids such artifacts, particularly in piecewise-smooth regions.
         </figcaption>
       </figure>
+      <h3 class="interactive-title">
+        Interactive Reconstruction Results
+      </h3>
+    
+      <div class="model-grid">
+        <div class="model-item">
+          <h3>3DScene</h3>
+    
+          <model-viewer
+            src="3d.glb"
+            alt="Trajectory Flow reconstruction result on the 3DScene dataset"
+            camera-controls
+            touch-action="pan-y"
+            auto-rotate
+            shadow-intensity="1"
+            exposure="1.1"
+            environment-image="neutral"
+            loading="lazy">
+          </model-viewer>
+    
+          <p>Reconstruction result on the 3DScene dataset.</p>
+        </div>
+    
+        <div class="model-item">
+          <h3>MGN</h3>
+    
+          <model-viewer
+            src="mgn.glb"
+            alt="Trajectory Flow reconstruction result on the MGN dataset"
+            camera-controls
+            touch-action="pan-y"
+            auto-rotate
+            shadow-intensity="1"
+            exposure="1.1"
+            environment-image="neutral"
+            loading="lazy">
+          </model-viewer>
+    
+          <p>Reconstruction result on the MGN dataset.</p>
+        </div>
+      </div>
+    
+      <p class="model-help">
+        Drag to rotate, scroll to zoom, and right-drag to move the viewpoint.
+      </p>
     </section>
-
+  
     <section id="citation">
       <h2>Citation</h2>
       <pre><code>@article{yu2026trajectory,

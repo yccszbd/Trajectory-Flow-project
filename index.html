@@ -41,7 +41,7 @@
     </nav>
 
     <figure class="teaser">
-      <img src="img/trajectory-flow/teaser.png" alt="Comparison of one-step, multi-step, and trajectory-flow surface reconstruction.">
+      <img src="img/teaser.png" alt="Comparison of one-step, multi-step, and trajectory-flow surface reconstruction.">
       <figcaption>
         Trajectory Flow models unsigned distance as continuous evolution along deterministic shortest-path trajectories, promoting trajectory consistency and enabling accurate and robust surface reconstruction.
       </figcaption>
@@ -57,7 +57,7 @@
     <section>
       <h2>Method</h2>
       <figure>
-        <img class="content-image" src="img/trajectory-flow/method.png" alt="Trajectory Flow training and inference pipeline.">
+        <img class="content-image" src="img/method.png" alt="Trajectory Flow training and inference pipeline.">
         <figcaption>
           During training, linear shortest-path trajectories supervise a time-conditioned velocity field. During inference, reverse integration transports query points to the underlying surface and recovers the UDF from their displacement.
         </figcaption>
@@ -65,6 +65,12 @@
 
       <p><strong>Geometry-Constrained Transport.</strong> Linear reference trajectories connect each query point to its nearest surface sample, replacing unstable local displacement corrections with globally structured transport.</p>
       <p><strong>Flow Learning and Reverse Integration.</strong> A bidirectional, time-conditioned velocity field learns the transport dynamics and recovers projected surface points through reverse integration.</p>
+      <figure>
+        <img class="content-image" src="img/des.png" alt="Ierative densification process.">
+        <figcaption>
+          We propose an iterative densification process that transforms discrete point-based supervision into continuous surface-level constraints via learned transport.
+        </figcaption>
+      </figure>
       <p><strong>Iterative Densification.</strong> Flow-guided densification progressively refines coarse point-wise supervision into accurate point-to-surface correspondences.</p>
     </section>
 
@@ -72,10 +78,10 @@
       <h2>Results</h2>
       <figure>
         <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
-          <img class="content-image" src="img/trajectory-flow/result.png" alt="Qualitative reconstruction comparison on the 3D Scene dataset.">
+          <img class="content-image" src="img/result.png" alt="Qualitative reconstruction comparison on the Shapenet Cars dataset.">
         </a>
         <figcaption>
-          Qualitative comparison on the 3D Scene dataset. Our method suppresses visible artifacts, preserves geometric structures, and reconstructs smooth surfaces in a complex real-world scene.
+          Qualitative comparison on the Shapenet Cars dataset. our method reconstructs nested multi-layer surfaces more faithfully, preserves distinct internal structures, and avoids such artifacts, particularly in piecewise-smooth regions.
         </figcaption>
       </figure>
     </section>

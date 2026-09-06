@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trajectory Flow: Geometry-Constrained Surface Reconstruction via Unsigned Distance Fields.">
+  <meta property="og:title" content="Trajectory Flow: Geometry-Constrained Surface Reconstruction via Unsigned Distance Fields">
+  <meta property="og:image" content="img/trajectory-flow/teaser.png">
+  <title>Trajectory Flow</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <h1>Trajectory Flow: Geometry-Constrained Surface Reconstruction via Unsigned Distance Fields</h1>
+    <p class="venue">IEEE Transactions on Visualization and Computer Graphics, 2026</p>
+
+    <div class="authors">
+      <span>Chengcheng Yu</span>
+      <span>Zixu Dun</span>
+      <span>Zheng Liu</span>
+      <span>Ying He</span>
+    </div>
+
+    <p class="affiliations">
+      China University of Geosciences (Wuhan)<br>
+      Nanyang Technological University
+    </p>
+  </header>
+
+  <main class="container">
+    <nav class="project-links" aria-label="Project links">
+      <a href="assets/trajectory-flow-paper.pdf">
+        <img src="img/paper_icon.png" alt="Paper">
+        <strong>Paper</strong>
+      </a>
+      <a href="https://github.com/yccszx/Trajectory-Flow" rel="noopener noreferrer">
+        <img src="img/github_icon.svg" alt="Code">
+        <strong>Code</strong>
+      </a>
+    </nav>
+
+    <figure class="teaser">
+      <img src="img/trajectory-flow/teaser.png" alt="Comparison of one-step, multi-step, and trajectory-flow surface reconstruction.">
+      <figcaption>
+        Trajectory Flow models unsigned distance as continuous evolution along deterministic shortest-path trajectories, promoting trajectory consistency and enabling accurate and robust surface reconstruction.
+      </figcaption>
+    </figure>
+
+    <section>
+      <h2>Abstract</h2>
+      <p class="text-justify">
+        Neural implicit methods reconstruct surfaces from point clouds by learning a continuous function, usually signed or unsigned distances. For unsigned distance field (UDF) reconstruction, many self-supervised methods estimate distance through local, gradient-guided displacement regression from query points to the surface. Because these corrections are local, they can become unstable near the zero level set and accumulate errors under sparse or non-uniform sampling. We address this limitation by reformulating UDF learning as a geometrically constrained trajectory-evolution problem, shifting from static local regression to global path-consistent modeling. We construct a bidirectional linear flow that promotes shortest-path trajectories between surface samples and query points. Under this formulation, distance prediction is interpreted as continuous state evolution along deterministic trajectories, preserving geometric consistency and mitigating local error accumulation. To address sparse and non-uniform sampling, we further introduce a flow-guided iterative densification strategy that progressively upgrades point-to-point approximations to accurate point-to-surface projections. Experiments on synthetic benchmarks and real-world scans demonstrate state-of-the-art reconstruction accuracy and robustness.
+      </p>
+    </section>
+
+    <section>
+      <h2>Method</h2>
+      <figure>
+        <img class="content-image" src="img/trajectory-flow/method.png" alt="Trajectory Flow training and inference pipeline.">
+        <figcaption>
+          During training, linear shortest-path trajectories supervise a time-conditioned velocity field. During inference, reverse integration transports query points to the underlying surface and recovers the UDF from their displacement.
+        </figcaption>
+      </figure>
+
+      <p><strong>Geometry-Constrained Transport.</strong> Linear reference trajectories connect each query point to its nearest surface sample, replacing unstable local displacement corrections with globally structured transport.</p>
+      <p><strong>Flow Learning and Reverse Integration.</strong> A bidirectional, time-conditioned velocity field learns the transport dynamics and recovers projected surface points through reverse integration.</p>
+      <p><strong>Iterative Densification.</strong> Flow-guided densification progressively refines coarse point-wise supervision into accurate point-to-surface correspondences.</p>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <figure>
+        <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
+          <img class="content-image" src="img/trajectory-flow/result.png" alt="Qualitative reconstruction comparison on the 3D Scene dataset.">
+        </a>
+        <figcaption>
+          Qualitative comparison on the 3D Scene dataset. Our method suppresses visible artifacts, preserves geometric structures, and reconstructs smooth surfaces in a complex real-world scene.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2>Citation</h2>
+      <pre><code>@article{yu2026trajectory,
+  title={Trajectory Flow: Geometry-Constrained Surface Reconstruction via Unsigned Distance Fields},
+  author={Yu, Chengcheng and Dun, Zixu and Liu, Zheng and He, Ying},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  volume={32},
+  number={10},
+  pages={8397--8412},
+  year={2026},
+  doi={10.1109/TVCG.2026.3721433}
+}</code></pre>
+    </section>
+
+    <footer>
+      <p>The website template was adapted from <a href="https://chenliang-zhou.github.io/Quartet-of-Diffusions/" rel="noopener noreferrer">Quartet of Diffusions</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>

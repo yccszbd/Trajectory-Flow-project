@@ -83,51 +83,24 @@
           Qualitative comparison on the Shapenet Cars dataset. our method reconstructs nested multi-layer surfaces more faithfully, preserves distinct internal structures, and avoids such artifacts, particularly in piecewise-smooth regions.
         </figcaption>
       </figure>
-      <h3 class="interactive-title">
-        Interactive Reconstruction Results
-      </h3>
-    
-      <div class="model-grid">
-        <div class="model-item">
-          <h3>3DScene</h3>
-    
-          <model-viewer
-            src="3d.glb"
-            alt="Trajectory Flow reconstruction result on the 3DScene dataset"
-            camera-controls
-            touch-action="pan-y"
-            auto-rotate
-            shadow-intensity="1"
-            exposure="1.1"
-            environment-image="neutral"
-            loading="lazy">
-          </model-viewer>
-    
-          <p>Reconstruction result on the 3DScene dataset.</p>
-        </div>
-    
-        <div class="model-item">
-          <h3>MGN</h3>
-    
-          <model-viewer
-            src="mgn.glb"
-            alt="Trajectory Flow reconstruction result on the MGN dataset"
-            camera-controls
-            touch-action="pan-y"
-            auto-rotate
-            shadow-intensity="1"
-            exposure="1.1"
-            environment-image="neutral"
-            loading="lazy">
-          </model-viewer>
-    
-          <p>Reconstruction result on the MGN dataset.</p>
-        </div>
+      <h3 class="interactive-title">Interactive Reconstruction Result</h3>
+      <div class="single-model">
+        <h3>MGN</h3>
+        <model-viewer
+          src="objects/mgn.glb"
+          alt="Trajectory Flow reconstruction result on the MGN dataset"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="25deg 70deg 80%"
+          field-of-view="30deg"
+          shadow-intensity="1.5"
+          exposure="0.8"
+          environment-image="neutral"
+          loading="lazy">
+        </model-viewer>
+        <p>Reconstruction result on the MGN dataset.</p>
       </div>
-    
-      <p class="model-help">
-        Drag to rotate, scroll to zoom, and right-drag to move the viewpoint.
-      </p>
     </section>
   
     <section id="citation">

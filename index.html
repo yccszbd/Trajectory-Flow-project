@@ -74,7 +74,7 @@
 
     <section>
       <h2>Results</h2>
-      <h3>Qualitative Comparison</h3>
+      <h3>Shapenet Cars dataset</h3>
       <figure>
         <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
           <img class="content-image" src="img/result.png" alt="Qualitative reconstruction comparison on the Shapenet Cars dataset.">
@@ -83,24 +83,28 @@
           Qualitative comparison on the Shapenet Cars dataset. our method reconstructs nested multi-layer surfaces more faithfully, preserves distinct internal structures, and avoids such artifacts, particularly in piecewise-smooth regions.
         </figcaption>
       </figure>
-      <h3 class="interactive-title">Interactive Reconstruction Result</h3>
-      <div class="single-model">
-        <h3>MGN</h3>
-        <model-viewer
-          src="mgn.glb"
-          alt="Trajectory Flow reconstruction result on the MGN dataset"
-          camera-controls
-          touch-action="pan-y"
-          auto-rotate
-          camera-orbit="25deg 70deg 80%"
-          field-of-view="30deg"
-          shadow-intensity="1.5"
-          exposure="0.8"
-          environment-image="neutral"
-          loading="lazy">
-        </model-viewer>
-        <p>Reconstruction result on the MGN dataset.</p>
-      </div>
+
+      <h3>3D Scene</h3>
+      <figure>
+        <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
+          <img class="content-image" src="img/3d.png" alt="Qualitative reconstruction comparison on the 3D Scene dataset.">
+        </a>
+        <figcaption>
+          Qualitative comparison on the 3D Scene dataset. our method suppresses visible artifacts, preserves geometric structures, and reconstructs smooth surfaces.
+        </figcaption>
+      </figure>
+      
+      <h3>Stanford 3D Scanning Repository</h3>
+      <figure>
+        <a href="img/trajectory-flow/result.png" title="Open the full-resolution result image">
+          <img class="content-image" src="img/famous.png" alt="Qualitative reconstruction comparison on the Stanford 3D Scanning Repository.">
+        </a>
+        <figcaption>
+          Qualitative comparison on the Stanford 3D Scanning Repository. our method preserves fine details and high-frequency geometric features.
+        </figcaption>
+      </figure>
+      
+       
     </section>
   
     <section id="citation">

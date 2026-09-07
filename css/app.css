@@ -42,40 +42,7 @@ a:focus {
   padding-top: 34px;
   text-align: center;
 }
-.interactive-title {
-  margin-top: 38px;
-  text-align: center;
-}
 
-.single-model {
-  width: 100%;
-  margin: 18px auto 0;
-  text-align: center;
-}
-
-.single-model h3 {
-  margin-bottom: 12px;
-  font-size: 20px;
-}
-
-.single-model model-viewer {
-  display: block;
-  width: 100%;
-  height: 620px;
-  margin: 0 auto;
-  background-color: #dfe3e8;
-  border: 1px solid #ccc;
-}
-
-.single-model p {
-  margin-top: 10px;
-}
-
-.model-help {
-  color: #666;
-  text-align: center;
-  font-size: 13px;
-}
 h1 {
   margin: 0 auto;
   font-size: 30px;
@@ -206,9 +173,6 @@ footer {
 
   h1 {
     font-size: 23px;
-  }
-  .single-model model-viewer {
-  height: 420px;
   }
   .venue {
     font-size: 16px;
